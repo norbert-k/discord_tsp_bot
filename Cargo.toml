@@ -1,0 +1,42 @@
+[package]
+name = "discord_tsp_bot"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+debug = false
+opt-level = 3
+codegen-units = 1
+lto = true
+strip = true
+
+[profile.dev.package.backtrace]
+opt-level = 3
+
+[dependencies.tokio]
+version = "1.24"
+features = ["full"]
+
+[dependencies.serenity]
+version = "0.11"
+default-features = false
+features = ["client", "gateway", "rustls_backend", "model", "voice"]
+
+[dependencies.songbird]
+version = "0.3"
+
+[dependencies.clap]
+version = "4.0"
+features = ["derive"]
+
+[dependencies.color-eyre]
+version = "0.6"
+
+#[dependencies.extrasafe]
+#version = "0.1"
+
+[dependencies.thiserror]
+version = "1.0"
+
+[dependencies.async-trait]
+version = "0.1"
